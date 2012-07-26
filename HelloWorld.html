@@ -1,1 +1,85 @@
-helloWorld
+
+<!doctype html>
+
+<html>
+
+  <head>
+
+		<meta charset="utf-8"/>
+
+		<title>基于YUI3的小例子：HelloWorld </title>
+
+		<script src="http://a.tbcdn.cn/s/yui/3.3.0/build/yui/yui-min.js"></script>
+
+		<style>
+
+			.show{ height:30px; margin-top:10px;}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<h2>小例子：Hello World</h2>
+
+		<ol>
+
+			<li>基于YUI3.3.0</li>
+
+			<li>依赖node模块</li>
+
+			<li>@author 仙凌 xianling.cly@taobao.com 2012-07-23</li>
+
+		</ol>
+
+		<hr>
+
+		<div class="demo">
+
+			<p>引入种子文件：http://a.tbcdn.cn/s/yui/3.3.0/build/yui/yui-min.js</p>
+
+			<p>DEMO：<a href="javascript:void(0);" id="J-btn">click me</a></p>
+
+		</div>	
+
+		<div id="J-show" class="show"></div>
+
+		<script>
+
+			YUI({
+
+				combine: true,
+
+				comboBase: 'http://a.tbcdn.cn/??',
+
+				root: 's/yui/3.3.0/build/',
+
+				charset:'utf-8',
+
+				filter:{
+
+					'searchExp': "&", 
+
+					'replaceStr': ","
+
+				}
+
+			}).use('node',function(Y){
+
+				var btnNode = Y.one('#J-btn');
+
+				btnNode && btnNode.on('click', function(){
+
+					Y.one('#J-show').setContent('Hello World!!').setStyles({'color':'red','fontWeight':'bold'});	
+
+				});
+
+			});
+
+		</script>
+
+	</body>
+
+</html>
+
