@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html>
+
+  <head>
+
+		<meta charset="utf-8"/>
+
+		<title>基于YUI3的HelloWorld </title>
+
+		<script src="http://a.tbcdn.cn/s/yui/3.3.0/build/yui/yui-min.js"></script>
+
+		<script>
+
+			YUI({
+
+				combine: true,
+
+				comboBase: 'http://a.tbcdn.cn/??',
+
+				root: 's/yui/3.3.0/build/',
+
+				charset:'utf-8',
+
+				filter:{
+
+					'searchExp': "&", 
+
+					'replaceStr': ","
+
+				}
+
+			}).use('node',function(Y){
+
+				var btnNode = Y.one('#btn');
+
+				btnNode && btnNode.on('click', function(){
+
+					//alert("Hello World");
+					Y.one('#show').setContent('Hello World.');
+
+				});
+
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="btn" >test</div>
+
+		<div id="show"></div>
+
+	</body>
+
+</html>
+
